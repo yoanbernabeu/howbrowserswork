@@ -2,13 +2,19 @@
 
 ## Purpose
 
-This repository is an interactive guide on how browsers work.
+This repository is an interactive guide to how browsers work, built with
+Next.js and small interactive examples.
 
 ## Project Structure & Module Organization
 
--   `app/` contains the Next.js App Router source (`layout.tsx`, `page.tsx`) and global styles in `globals.css`.
--   `public/` is reserved for static assets (currently empty).
--   Root configuration lives in `next.config.ts`, `tsconfig.json`, `eslint.config.mjs`, and `postcss.config.mjs`.
+-   `app/` contains the Next.js App Router entry points and global styles in
+    `globals.css`.
+-   `components/` holds reusable UI, examples, and section blocks:
+    `components/examples/` for interactive demos and `components/sections/`
+    for page sections.
+-   `public/` is reserved for static assets.
+-   Root configuration lives in `next.config.ts`, `tsconfig.json`,
+    `eslint.config.mjs`, and `postcss.config.mjs`.
 
 ## Build, Test, and Development Commands
 
@@ -19,15 +25,18 @@ This repository is an interactive guide on how browsers work.
 
 ## Coding Style & Naming Conventions
 
--   Stack: TypeScript + React (Next.js App Router).
--   Keep route segments and pages under `app/` with Next.js conventions (`page.tsx`, `layout.tsx`).
--   Name components in PascalCase, utilities/hooks in camelCase.
--   Formatting: rely on ESLint (`npm run lint`). There is no dedicated formatter, so mirror the existing file style.
+-   Stack: TypeScript + React (Next.js App Router) with Tailwind CSS.
+-   Keep route segments and pages under `app/` with Next.js conventions
+    (`page.tsx`, `layout.tsx`).
+-   Name components in PascalCase and hooks/utilities in camelCase.
+-   Formatting: rely on ESLint (`npm run lint`). There is no dedicated
+    formatter, so mirror the existing file style.
 
 ## Testing Guidelines
 
 -   No test framework is configured yet.
--   If you add tests, document the framework and add a `package.json` script to run them.
+-   If you add tests, document the framework and add a `package.json` script
+    to run them.
 
 ## Commit & Pull Request Guidelines
 
