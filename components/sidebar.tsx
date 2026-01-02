@@ -35,8 +35,8 @@ export default function Sidebar({ sections }: { sections: SectionSummary[] }) {
                                             className={[
                                                 "leading-5",
                                                 isActive
-                                                    ? "text-slate-900"
-                                                    : "text-slate-600",
+                                                    ? "text-slate-800"
+                                                    : "text-slate-500",
                                             ]
                                                 .filter(Boolean)
                                                 .join(" ")}

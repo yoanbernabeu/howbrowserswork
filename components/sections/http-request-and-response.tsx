@@ -1,16 +1,11 @@
 import ExampleContainer from "@/components/example-container";
 import Section from "@/components/section";
-import ReturnHttpResponse from "@/components/examples/return-http-response";
+import HttpRequestResponseExample from "@/components/examples/http-request-response-example";
 
 type SectionProps = {
     sectionId?: string;
     title?: string;
 };
-
-const request = `GET / HTTP/1.1
-Host: example.com
-Accept: text/html
-`;
 
 export default function HttpRequestAndResponse({
     sectionId = "http-request-and-response",
@@ -20,17 +15,19 @@ export default function HttpRequestAndResponse({
         <Section id={sectionId} title={title}>
             <p>
                 Once the TCP connection is established, the browser can send an
-                HTTP request to the server:
+                HTTP request to the server.
             </p>
-            <pre className="bg-slate-100 p-4 rounded-lg">
-                <code>{request}</code>
-            </pre>
             <p>
-                The server processes the request and returns an HTTP response.
+                Click the "Go" button to watch the HTTP request travel to the
+                server and the HTTP response return to the browser:
             </p>
             <ExampleContainer>
-                <ReturnHttpResponse />
+                <HttpRequestResponseExample />
             </ExampleContainer>
+            <p>
+                When the HTTP response arrives, the browser reads the raw HTTP
+                response and starts rendering the HTML content.
+            </p>
         </Section>
     );
 }
