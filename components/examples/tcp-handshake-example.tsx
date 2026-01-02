@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Button from "@/components/button";
 
 const steps = [
     {
@@ -177,12 +178,11 @@ export default function TcpHandshakeExample() {
                             : connectionState}
                     </span>
                 </div>
-                <button
-                    onClick={handleConnect}
-                    className="rounded-md bg-blue-500 px-3 py-1 text-sm font-bold text-white ring-0"
+                <Button
+                    onClick={handleConnect}                    
                 >
                     {buttonLabel}
-                </button>
+                </Button>
             </div>
             <div className="space-y-1 text-xs">
                 {steps.map((step, index) => (

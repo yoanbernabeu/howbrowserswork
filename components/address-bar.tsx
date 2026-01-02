@@ -1,5 +1,7 @@
 "use client";
 
+import Button from "./button";
+
 interface AddressBarProps {
     className?: string;
     defaultValue?: string;
@@ -71,12 +73,9 @@ export default function AddressBar({
                                 placeholder="Search or type a URL..."
                             />
                         </div>
-                        <button
-                            className="rounded-md bg-blue-500 px-3 py-1 text-sm font-bold text-white disabled:cursor-not-allowed disabled:bg-blue-300"
-                            disabled={isSubmitDisabled}
-                        >
+                        <Button type="submit" disabled={isSubmitDisabled}>
                             Go
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>

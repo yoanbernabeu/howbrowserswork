@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Button from "@/components/button";
 
 type Direction = "right" | "left";
 type PacketStatus = "idle" | "in-flight" | "dropped";
@@ -78,7 +79,7 @@ export default function TcpCommunicationExample() {
             };
         }
         return {
-            name: "ACK",
+            name: "DATA",
             meta: `seq=${current.serverSeq} ack=${current.serverAck}`,
         };
     };
@@ -203,7 +204,8 @@ export default function TcpCommunicationExample() {
     };
 
     const showSending = isSending && packetStatus === "in-flight";
-    const statusLabel = packetStatus === "dropped" ? "Packet dropped" : "Connected";
+    const statusLabel =
+        packetStatus === "dropped" ? "Network issues" : "Connected";
 
     return (
         <div className="space-y-4">
@@ -231,11 +233,10 @@ export default function TcpCommunicationExample() {
                     </span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <button
+                    <Button
                         onClick={handleStart}
                         disabled={isSending && !hasDisrupted}
                         className={[
-                            "rounded-md bg-blue-500 px-3 py-1 text-sm font-bold text-white ring-0",
                             isSending && !hasDisrupted ? "opacity-60" : "",
                         ]
                             .filter(Boolean)
@@ -244,19 +245,19 @@ export default function TcpCommunicationExample() {
                         {isSending && hasDisrupted
                             ? "Restart sending packets"
                             : "Start sending packets"}
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         onClick={handleDisrupt}
                         disabled={!isSending}
                         className={[
-                            "rounded-md bg-rose-500 px-3 py-1 text-sm font-bold text-white ring-0",
+                            "bg-rose-500",
                             !isSending ? "opacity-60" : "",
                         ]
                             .filter(Boolean)
                             .join(" ")}
                     >
                         Disrupt network
-                    </button>
+                    </Button>
                 </div>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white px-3 py-3">
