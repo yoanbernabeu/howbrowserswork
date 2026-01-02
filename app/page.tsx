@@ -5,6 +5,7 @@ import EstablishingTheTcpConnection from "@/components/sections/establishing-the
 import ResolvingTheServerAddress from "@/components/sections/resolving-the-server-address";
 import TurningAUrlIntoAnHttpRequest from "@/components/sections/turning-a-url-into-an-http-request";
 import Sidebar from "@/components/sidebar";
+import Link from "next/link";
 
 type SectionComponentProps = {
     sectionId?: string;
@@ -53,9 +54,11 @@ export default function IndexPage() {
                 <div className="w-full max-w-3xl space-y-10">
                     <main className="flex w-full flex-col space-y-10">
                         <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
-                            <h1 className="font-serif max-w-xs text-3xl font-semibold leading-8 tracking-tight text-black dark:text-zinc-50">
-                                How Browsers Work
-                            </h1>
+                            <Link href="/">
+                                <h1 className="font-serif max-w-xs text-3xl font-semibold leading-8 tracking-tight text-black dark:text-zinc-50">
+                                    How Browsers Work
+                                </h1>
+                            </Link>
                             <p className="max-w-lg text-lg leading-8 text-zinc-600 ">
                                 An interactive guide to the internal world of
                                 browsers.
