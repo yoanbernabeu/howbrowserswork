@@ -46,7 +46,7 @@ export default function ResolveServerAddressExample() {
             const records = dnsFixtures[normalizedHost] ?? [];
             setIps(records);
             if (records.length === 0) {
-                setError("No A records found.");
+                setError("No records found.");
             }
             setIsLoading(false);
         }, 500);
