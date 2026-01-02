@@ -1,5 +1,6 @@
-import Section from "@/components/section";
 import BrowsersWorkWithUrls from "@/components/sections/browsers-work-with-urls";
+import NextSection from "@/components/NextSection";
+import ResolvingTheServerAddress from "@/components/sections/resolving-the-server-address";
 import TurningAUrlIntoAnHttpRequest from "@/components/sections/turning-a-url-into-an-http-request";
 
 export default function IndexPage() {
@@ -16,6 +17,8 @@ export default function IndexPage() {
                 </div>
                 <BrowsersWorkWithUrls />
                 <TurningAUrlIntoAnHttpRequest />
+                <ResolvingTheServerAddress />
+                <NextSection />
             </main>
         </div>
     );
