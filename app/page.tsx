@@ -4,6 +4,7 @@ import { SectionsProgressProvider } from "@/components/sections-progress";
 import BrowsersWorkWithUrls from "@/components/sections/browsers-work-with-urls";
 import EstablishingTheTcpConnection from "@/components/sections/establishing-the-tcp-connection";
 import HttpRequestAndResponse from "@/components/sections/http-request-and-response";
+import ParsingHtml from "@/components/sections/parsing-html";
 import ResolvingTheServerAddress from "@/components/sections/resolving-the-server-address";
 import TurningAUrlIntoAnHttpRequest from "@/components/sections/turning-a-url-into-an-http-request";
 import Sidebar from "@/components/sidebar";
@@ -47,6 +48,11 @@ const sections: SectionConfig[] = [
         Component: HttpRequestAndResponse,
     },
     {
+        id: "parsing-html",
+        title: "Parsing HTML to build the DOM tree",
+        Component: ParsingHtml,
+    },
+    {
         id: "next-section",
         title: "Next Section",
         Component: NextSection,
@@ -72,8 +78,7 @@ export default function IndexPage() {
                                 </h1>
                             </Link>
                             <p className="max-w-lg text-lg leading-8 text-zinc-600 ">
-                                An interactive guide to the internal world of
-                                browsers.
+                                An interactive guide to how browsers work.
                             </p>
                         </div>
                         {sections.map(
